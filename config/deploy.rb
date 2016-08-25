@@ -33,6 +33,7 @@ set :puma_init_active_record, true  # Change to false when not using ActiveRecor
 ## Linked Files & Directories (Default None):
 # set :linked_files, %w{config/database.yml}
 # set :linked_dirs,  %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+set :linked_files, %w{config/secrets.yml}
 
 namespace :puma do
   desc 'Create Directories for Puma Pids and Socket'
@@ -61,7 +62,7 @@ namespace :deploy do
   desc 'Initial Deploy'
   task :initial do
     on roles(:app) do
-      before 'deploy:restart', 'puma:start'      
+      before 'deploy:restart', 'puma:start'
       invoke 'deploy'
     end
   end
