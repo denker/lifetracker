@@ -13,12 +13,6 @@ h2
     br
     = f.text_field :name
 
-  .field
-    = f.label :phone
-    br
-    = f.telephone_field :phone
-
-
   - if devise_mapping.confirmable? && resource.pending_reconfirmation?
     div
       | Currently waiting confirmation for:

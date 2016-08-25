@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160825045302) do
+ActiveRecord::Schema.define(version: 20160825045535) do
 
   create_table "records", force: :cascade do |t|
     t.string   "text"
@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 20160825045302) do
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
-    t.string   "phone"
     t.string   "name"
     t.integer  "telegram"
     t.string   "reset_password_token"

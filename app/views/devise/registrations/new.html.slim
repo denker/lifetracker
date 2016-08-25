@@ -13,11 +13,6 @@ h2
     = f.text_field :name
 
   .field
-    = f.label :phone
-    br
-    = f.telephone_field :phone
-
-  .field
     = f.label :password
     - if @minimum_password_length
       em
