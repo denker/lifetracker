@@ -1,0 +1,15 @@
+= form_for(record) do |f|
+  - if record.errors.any?
+    #error_explanation
+      h2
+        = pluralize(record.errors.count, "error")
+        |  prohibited this record from being saved:
+      ul
+        - record.errors.full_messages.each do |message|
+          li
+            = message
+  .field
+    = f.label :text
+    = f.text_field :text
+  .actions
+    = f.submit
