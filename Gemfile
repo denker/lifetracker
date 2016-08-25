@@ -36,6 +36,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'awesome_print'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
   gem 'listen', '~> 3.0.5'
@@ -48,7 +49,12 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
-gem 'telegram-bot-ruby'
+gem 'telegram-bot'
 gem 'devise'
 gem 'bootstrap'
 gem 'slim'
+
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.1.0'
+end

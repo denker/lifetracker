@@ -1,0 +1,21 @@
+nav.navbar.navbar-inverse
+  .container
+    .navbar-header
+      button.navbar-toggle.collapsed aria-expanded="false" data-target="#main-navbar-collapse" data-toggle="collapse" type="button"
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      = link_to 'LifeTracker', root_path, class: 'navbar-brand'
+    #main-navbar-collapse.navbar-collapse.collapse
+      ul.nav.navbar-nav.navbar-right
+        - if user_signed_in?
+          li
+            = link_to current_user.email
+          li
+            = link_to 'Выйти', destroy_user_session_path, :method=>'delete'
+        - else
+          li
+            = link_to 'Регистрация', new_user_registration_path
+          li
+            = link_to 'Войти', new_user_session_path
