@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   telegram_webhooks TelegramController if Rails.env.development?
 
   if Rails.env.production?
-    telegram_webhooks TelegramController, bot, {token: ENV['TELEGRAM_BOT_TOKEN'], username: 'day_life_tracker_bot'}
+    telegram_webhooks TelegramController, {token: ENV['TELEGRAM_BOT_TOKEN'], username: 'day_life_tracker_bot'}
   end
 
 end
